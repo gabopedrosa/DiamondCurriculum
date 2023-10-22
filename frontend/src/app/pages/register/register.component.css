@@ -1,0 +1,13 @@
+.container{
+    display: grid;
+    width: 50%;
+}
+
+button{
+    justify-self: center;
+    width: 50%;
+}
+
+
+
+@import "~@fortawesome/fontawesome-free/css/all.min.css";

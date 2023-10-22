@@ -1,0 +1,48 @@
+<app-header></app-header>
+<section class="vh-100">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-6 text-black">
+
+        <div class="px-5 ms-xl-4">
+          <i class="fa-regular fa-gem fa-2x me-3 pt-5 mt-xl-4" style="color: #00ffff;"></i>
+          <span class="h1 fw-bold mb-0">Diamond Curriculums</span>
+        </div>
+
+        <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
+
+          <form style="width: 23rem;" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            
+            <div class="form-outline mb-4">
+            
+              <mat-label>E-mail</mat-label>
+              <input class="input" placeholder="" formControlName="email" class="form-control form-control-lg">
+              <mat-error *ngIf="loginForm.controls['email'].errors" style="font-size: 12px; margin-top: 3px;">&nbsp; É necessário inserir um e-mail válido.</mat-error>
+            </div>
+
+
+            <div class="form-outline mb-4">
+              <mat-label>Senha</mat-label>
+              <input class="input" type="password" matInput formControlName="password" class="form-control form-control-lg">
+              <mat-error *ngIf="loginForm.controls['password'].errors" style="font-size: 12px; margin-top: 3px;">&nbsp; Sua senha está inválida.</mat-error>
+            </div>
+
+            <div class="pt-1 mb-4">
+              <button mat-flat-button color="primary" [disabled]="!loginForm.valid" type="submit" style="margin-top: 10px;">Logar</button>
+            </div>
+
+            <p>Não tem conta? <a routerLink="/register" class="link-info">Cadastre-se agora</a></p>
+
+          </form>
+
+        </div>
+
+      </div>
+      <div class="col-sm-6 px-0 d-none d-sm-block">
+        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img3.webp"
+          alt="Login image" class="w-100 vh-100" style="object-fit: cover; object-position: left;">
+      </div>
+    </div>
+  </div>
+</section>
+

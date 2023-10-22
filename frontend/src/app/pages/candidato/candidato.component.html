@@ -1,0 +1,102 @@
+<app-header></app-header>
+<div class="container">
+    <div class="input-container">
+        <i class="fas fa-user"></i>
+        <input
+            type="text"
+            [(ngModel)]="nome"
+            (input)="formatNome()"
+            placeholder="Digite seu Nome"
+            class="form-control"
+            id="nome"
+        />
+    </div>
+
+    <div class="input-container">
+        <i class="fa-solid fa-id-card-clip"></i>
+        <input
+            type="text"
+            [(ngModel)]="cpf"
+            (input)="formatCpf()"
+            placeholder="Digite seu CPF"
+            maxlength="11"
+            class="form-control"
+            id="cpf"
+        />
+    </div>
+
+    <div class="input-container">
+        <i class="fa-solid fa-at"></i>
+        <input 
+            type="email"
+            [(ngModel)]="email"
+            name="email"
+            placeholder="E-mail"
+            id="email"
+        />
+    </div>
+
+    <div class="input-container">
+        <i class="fa-solid fa-phone"></i>
+        <input 
+            type="text"
+            [(ngModel)]="numeroCelular"
+            (input)="filtrarNumeros($event)"
+            name="numeroCelular"
+            id="numeroCelular"
+            placeholder="Telefone com DDD"
+            maxlength="15"
+        />
+    </div>
+
+    <div class="input-container">
+        <i class="fa-solid fa-school"></i>
+        <select 
+            name="escolaridade" 
+            [(ngModel)]="escolaridade"
+            class="select-escolaridade"
+            id="escolaridade"
+        >
+            <option value="" disabled selected>Escolaridade</option>
+            <option value="Analfabeto">Analfabeto</option>
+            <option value="Fundamental Completo">Fundamental Completo</option>
+            <option value="Médio Incompleto">Médio Incompleto</option>
+            <option value="Médio Completo">Médio Completo</option>
+            <option value="Superior Incompleto">Superior Incompleto</option>
+            <option value="Superior Completo">Superior Completo</option>
+            <option value="Mestrado">Mestrado</option>
+            <option value="Doutorado">Doutorado</option>
+            <option value="Ignorado">Ignorado</option>
+        </select>
+    </div>
+
+    <div class="input-container">
+        <i class="fa-solid fa-calendar"></i>
+        <input
+            type="text"
+            [(ngModel)]="dataNascimento"
+            onfocus="(this.type='date')"
+            name="dataNascimento"
+            placeholder="Data de Nascimento"
+            id="dataNascimento"
+        />
+    </div>
+
+
+    <div class="input-container">
+        <i class="fa-solid fa-eye"></i>
+        <textarea 
+            id="competencia" 
+            name="competencia"  
+            [(ngModel)]="competencia"
+            rows="11" cols="50" 
+            placeholder="Informe sua Função e Competências abaixo."
+        >
+        </textarea>
+        <button type="button" class="btn btn-primary">Enviar Currículo</button>
+    </div>
+    <div class="alert alert-warning" role="alert">
+        Você é da área administrativa? <a href="#" class="alert-link">Siga esse link</a> para acessar.
+      </div>
+    </div>
+<app-footer></app-footer>

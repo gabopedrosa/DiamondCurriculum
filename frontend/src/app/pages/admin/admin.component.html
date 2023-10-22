@@ -1,0 +1,60 @@
+<mat-toolbar color="primary">
+    &nbsp;&nbsp; Dashboard
+    <span class="navbar-nav">Diamond.Curriculum&nbsp;</span><mat-icon fontIcon="diamond"></mat-icon>
+    <button mat-icon-button class="navbar-nav" routerLink="/login">
+        <mat-icon fontIcon="logout"></mat-icon>
+    </button>
+</mat-toolbar>
+
+<h1 style="text-align: center; margin-top: 10px;">Avaliação de Curriculos</h1>
+<div *ngIf="dataSource">
+    <table mat-table [dataSource]="dataSource.items">
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef>ID.</th>
+            <td mat-cell *matCellDef="let element">{{element.id}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef>Nome</th>
+            <td mat-cell *matCellDef="let element">{{element.name}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="cpf">
+            <th mat-header-cell *matHeaderCellDef>CPF</th>
+            <td mat-cell *matCellDef="let element">{{element.cpf}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="birth">
+            <th mat-header-cell *matHeaderCellDef>Data de <br/>Nascimento</th>
+            <td mat-cell *matCellDef="let element">{{element.birth}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="email">
+            <th mat-header-cell *matHeaderCellDef>Email</th>
+            <td mat-cell *matCellDef="let element">{{element.email}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="escolaridade">
+            <th mat-header-cell *matHeaderCellDef>Escolaridade</th>
+            <td mat-cell *matCellDef="let element">{{element.escolaridade}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="role">
+            <th mat-header-cell *matHeaderCellDef>Tipo de Usuário</th>
+            <td mat-cell *matCellDef="let element">{{element.role}}</td>
+        </ng-container>
+
+    </table>
+    <mat-paginator
+        [length]="dataSource.meta.totalItems" 
+        [pageSize]="dataSource.meta.itemsPerPage"
+        [pageSizeOptions]=[5,10]
+        (page)="pageEvent = $event; onPaginateChange($event)">
+       
+    </mat-paginator>
+</div>
+
+<router-outlet></router-outlet>

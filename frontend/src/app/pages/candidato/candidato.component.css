@@ -1,0 +1,116 @@
+@import "~@fortawesome/fontawesome-free/css/all.min.css";
+
+
+.input-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    flex: 1;
+    padding: 10px;
+
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;  
+  }
+
+  /* Estilo para o ícone */
+  .input-container i {
+    margin-right: 10px; /* Espaçamento entre o ícone e o campo de entrada */
+    font-size: 18px; /* Tamanho do ícone */
+    padding-left: 10px;
+  }
+  
+  /* Estilo para o campo de entrada */
+  .input-container input {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    
+  }
+  
+  .input-container select {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .input-container textarea {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  /* Estilo para o campo de entrada quando está em foco */
+  .input-container input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
+  /* Estilo para o placeholder do campo de entrada */
+  .input-container input::placeholder {
+    color: #999;
+  }
+
+
+  .container{
+    align-items: center;
+    margin-top: 10px;
+    margin-left: auto;
+    padding-right: auto;
+  }
+
+  .input-container .select-escolaridade {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+  }
+  
+  /* Estilização para quando o elemento <select> dentro da div está em foco */
+  .input-container .select-escolaridade:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
+  /* Estilização para as opções do seletor dentro da div */
+  .input-container .select-escolaridade option {
+    padding: 10px;
+  }
+  
+  /* Estilização para o seletor quando está aberto dentro da div */
+  .input-container .select-escolaridade:active,
+  .input-container .select-escolaridade:focus {
+    background-color: #f5f5f5;
+  }
+
+  textarea {
+    width: 10; /* Largura total */
+    padding: 10px; /* Espaçamento interno */
+    font-size: 16px; /* Tamanho da fonte */
+    border: 1px solid #ccc; /* Borda */
+    border-radius: 5px; /* Borda arredondada */
+    background-color: #fff; /* Cor de fundo */
+    resize: vertical; /* Permite redimensionamento vertical */
+    font: Arial;  }
+  
+  /* Estilização para quando a textarea está em foco */
+  textarea:focus {
+    outline: none; /* Remove a borda de foco padrão */
+    border-color: #007bff; /* Cor da borda em foco */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Sombra em foco */
+  }
+
+  button {
+    margin-left: 10px;
+  }

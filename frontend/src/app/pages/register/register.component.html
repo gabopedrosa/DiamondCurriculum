@@ -1,0 +1,58 @@
+<app-header></app-header>
+
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="mx-1 mx-md-4">
+    <div class="container" style="margin-top: 100px;">
+        
+        <mat-form-field>
+            <mat-label>Nome</mat-label>
+            <input matInput placeholder="" formControlName="name">
+            <mat-hint *ngIf="registerForm.controls['name'].errors"></mat-hint>
+        </mat-form-field>
+        
+        <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input matInput type="email" placeholder="" formControlName="email">
+            <mat-hint *ngIf="registerForm.controls['email'].errors"></mat-hint>
+        </mat-form-field>
+        
+        <mat-form-field>
+            <mat-label>CPF</mat-label>
+            <input inputmode="numeric" matInput placeholder="" formControlName="cpf" maxlength="11">
+            <mat-hint *ngIf="registerForm.controls['cpf'].errors"></mat-hint>
+        </mat-form-field>
+
+        
+        <mat-form-field>
+            <mat-label>Data de nascimento</mat-label>
+            <input matInput type="date" placeholder="" formControlName="birth">
+            <mat-hint *ngIf="registerForm.controls['birth'].errors"></mat-hint>
+        </mat-form-field>
+        
+        <mat-form-field>
+            <label style="margin-bottom: 10px;">Escolaridade</label>
+            <select formControlName="escolaridade" class="form-select">
+                <input matInput>
+                <option value="analfabeto">Analfabeto</option>
+                <option value="fundamentalcompleto">Fundamental Completo</option>
+                <option value="medioincompleto">Médio Incompleto</option>
+                <option value="mediocompleto">Médio Completo</option>
+                <option value="superiorincompleto">Superior Incompleto</option>
+                <option value="superiorcompleto">Superior Completo</option>
+                <option value="mestrado">Mestrado</option>
+                <option value="doutorado">Doutorado</option>
+            </select>
+            <mat-hint *ngIf="registerForm.controls['escolaridade'].errors"></mat-hint>
+        </mat-form-field>
+        
+        
+        <mat-form-field>
+            <mat-label>Senha</mat-label>
+            <input matInput type="password" placeholder="" formControlName="password">
+            <mat-hint *ngIf="registerForm.controls['password'].errors"></mat-hint>
+        </mat-form-field>
+
+        
+        <button mat-flat-button color="primary" [disabled]="registerForm.invalid" type="submit">Concluir cadastro</button>
+
+    </div>
+</form>
